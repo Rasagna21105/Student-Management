@@ -25,7 +25,7 @@ const EditStudent = () => {
     const fetchStudent = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:8080/api/student/${id}`);
+        const response = await axios.get(`https://student-management-1-oil5.onrender.com/api/student/${id}`);
         const student = response.data;
         
         // Format date to YYYY-MM-DD for input[type="date"]
@@ -114,7 +114,7 @@ const EditStudent = () => {
     }
     
     try {
-      await axios.put(`http://localhost:8080/api/student/${id}`, formData);
+      await axios.put(`https://student-management-1-oil5.onrender.com/api/student/${id}`, formData);
       toast.success('Student updated successfully');
       navigate('/students');
     } catch (error) {
