@@ -133,7 +133,7 @@ const StudentList = () => {
                   <td>
                     <div className="btn-group" role="group">
                       <Link 
-                        to={`/students/edit/${student._id}`} 
+                        to={`/edit-student/:id`} 
                         className="btn btn-sm btn-warning me-1"
                       >
                         Edit
