@@ -65,7 +65,7 @@ const StudentList = () => {
     <div className="student-list">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Student List</h2>
-        <Link to="/students/add" className="btn btn-primary">
+        <Link to="/add-student" className="btn btn-primary">
           Add New Student
         </Link>
       </div>
