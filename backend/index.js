@@ -9,7 +9,7 @@ require('./Models/db');
 
 // CORS middleware - allow requests from frontend
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'], // React default port - added both localhost and IP
+  origin: ['http://localhost:3000', 'http://127.0.0.1:3000','https://student-management-1-oil5.onrender.com'], // React default port - added both localhost and IP
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true // Allow credentials
