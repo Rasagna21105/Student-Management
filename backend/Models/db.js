@@ -8,7 +8,7 @@ if (!MONGO_URL) {
   process.exit(1); // Exit with error
 }
 
-mongoose.connect(MONGO_URL)
+mongoose.connect(process.env.MONGO_URL)
   .then(() => {
     console.log('MongoDB connected successfully');
   })
