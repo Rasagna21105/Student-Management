@@ -50,7 +50,7 @@ const Home = () => {
         </p>
         <hr className="my-4" />
         <p>Use the navigation menu to access different features of the system.</p>
-        <Link to="/students/add" className="btn btn-primary btn-lg">
+        <Link to="/add-student" className="btn btn-primary btn-lg">
           Add New Student
         </Link>
       </div>
