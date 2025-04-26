@@ -16,7 +16,7 @@ const StudentList = () => {
   const fetchStudents = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:8080/api/student');
+      const response = await axios.get('https://student-management-1-oil5.onrender.com/api/student');
       setStudents(response.data);
       setLoading(false);
     } catch (error) {
@@ -29,7 +29,7 @@ const StudentList = () => {
   const deleteStudent = async (id) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
-        await axios.delete(`http://localhost:8080/api/student/${id}`);
+        await axios.delete(`https://student-management-1-oil5.onrender.com/api/student/${id}`);
         toast.success('Student deleted successfully');
         fetchStudents();
       } catch (error) {
