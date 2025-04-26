@@ -89,7 +89,7 @@ const AddStudent = () => {
     try {
       await axios.post('https://student-management-1-oil5.onrender.com/api/student', formData);
       toast.success('Student added successfully');
-      navigate('/api/student');
+      navigate('/students');
     } catch (error) {
       console.error('Error adding student:', error);
       toast.error('Failed to add student');
