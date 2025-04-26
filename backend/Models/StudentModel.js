@@ -1,40 +1,40 @@
-const mongoose=require('mongoose');
-const Schema=mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const StudentSchema=new Schema({
-  id:{
+const StudentSchema = new Schema({
+  // Optional ID field - you can keep it if you need a custom ID
+  id: {
+    type: String
+  },
+  firstname: {
     type: String,
     required: true
   },
-  firstname:{
+  lastname: {
     type: String,
     required: true
   },
-  lastname:{
+  email: {
     type: String,
     required: true
   },
-  email:{
-    type: String,
-    required: true
-  },
-  dob:{
+  dob: {
     type: Date,
     required: true
   },
-  department:{
+  department: {
     type: String,
     required: true
   },
-  enrollmentyear:{
+  enrollmentyear: {
     type: Number,
     required: true
   },
-  isactive:{
+  isactive: {
     type: Boolean,
     default: true
   }
-
 });
-const StudentModel=mongoose.model('student',StudentSchema);
-module.exports=StudentModel;
+
+const StudentModel = mongoose.model('student', StudentSchema);
+module.exports = StudentModel;

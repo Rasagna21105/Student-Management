@@ -9,9 +9,10 @@ require('./Models/db');
 
 // CORS middleware - allow requests from frontend
 app.use(cors({
-  origin: 'http://localhost:3000', // React default port
+  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'], // React default port - added both localhost and IP
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true // Allow credentials
 }));
 
 // Middleware to parse JSON
@@ -37,7 +38,16 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
-app.listen(PORT, () => {
+// Start server with graceful shutdown support
+const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+});
+
+// Handle process termination
+process.on('SIGINT', () => {
+  console.log('Shutting down server gracefully');
+  server.close(() => {
+    console.log('Server closed');
+    process.exit(0);
+  });
 });
