@@ -7,7 +7,7 @@ const apiService = {
   students: {
     getAll: async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/student`);
+        const response = await axios.get(`${API_BASE_URL}/student_db`);
         return response.data;
       } catch (error) {
         throw error;
@@ -16,7 +16,7 @@ const apiService = {
     
     getById: async (id) => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/student/${id}`);
+        const response = await axios.get(`${API_BASE_URL}/student_db/${id}`);
         return response.data;
       } catch (error) {
         throw error;
@@ -25,7 +25,7 @@ const apiService = {
     
     create: async (studentData) => {
       try {
-        const response = await axios.post(`${API_BASE_URL}/student`, studentData);
+        const response = await axios.post(`${API_BASE_URL}/student_db`, studentData);
         return response.data;
       } catch (error) {
         throw error;
@@ -34,7 +34,7 @@ const apiService = {
     
     update: async (id, studentData) => {
       try {
-        const response = await axios.put(`${API_BASE_URL}/student/${id}`, studentData);
+        const response = await axios.put(`${API_BASE_URL}/student_db/${id}`, studentData);
         return response.data;
       } catch (error) {
         throw error;
@@ -43,7 +43,7 @@ const apiService = {
     
     delete: async (id) => {
       try {
-        const response = await axios.delete(`${API_BASE_URL}/student/${id}`);
+        const response = await axios.delete(`${API_BASE_URL}/student_db/${id}`);
         return response.data;
       } catch (error) {
         throw error;
